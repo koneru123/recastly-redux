@@ -12,9 +12,10 @@ var handleVideoSearch = (query) => {
     };
 //debugger;
 //console.log(props)
-    this.props.searchYouTube(options, (videos) =>
-      dispatch(changedVideoList(videos)),
-      dispatch(changedVideo(videos[0]))
+    searchYouTube(options, (videos) => {
+      dispatch(changeVideoList(videos));
+      dispatch(changeVideo(videos[0]))
+    }
     )
   }
 // setTimeout(() => {searchYouTube(options, (videos) =>
