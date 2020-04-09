@@ -10,10 +10,10 @@ var handleVideoSearch = (query) => {
        key: YOUTUBE_API_KEY,
        query: query
     };
-    searchYouTube(options, (videos) => {
+    setTimeout(searchYouTube(options, (videos) => {
       dispatch(changeVideoList(videos));
       dispatch(changeVideo(videos[0]))
-    })
+    }),500)
   }
 };
 
