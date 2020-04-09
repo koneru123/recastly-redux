@@ -7,8 +7,7 @@ import exampleVideoData from '../data/exampleVideoData.js';
 
 const initialState = {
   currentVideo: exampleVideoData[0],
-  videoList: exampleVideoData,
-  query: 'cats'
+  videoList: exampleVideoData
 };
 
 const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
