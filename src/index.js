@@ -13,3 +13,6 @@ ReactDOM.render(
   <App API_KEY={YOUTUBE_API_KEY} searchYouTube={searchYouTube} />,
   document.getElementById('app')
 );
+
+
+//ititilize the page here

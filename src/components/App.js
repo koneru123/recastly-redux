@@ -2,10 +2,13 @@ import React from 'react';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
 import Search from './Search.js';
+import currentVideo from '../actions/currentVideo.js';
+//import { Provider } from 'react-redux';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props)
 
     this.state = {
       videos: [],
@@ -29,18 +32,19 @@ class App extends React.Component {
       query: query
     };
 
-    this.props.searchYouTube(options, (videos) =>
+    setTimeout(() => {this.props.searchYouTube(options, (videos) =>
       this.setState({
         videos: videos,
         currentVideo: videos[0]
       })
-    );
+    )}, 500);
   }
 
   //TODO: swap out the React components below for the container components
   //  you wrote in the 'containers' directory.
   render() {
     return (
+      //<Provider store={store}>
       <div>
         <nav className="navbar">
           <div className="col-md-6 col-md-offset-3">
@@ -59,6 +63,7 @@ class App extends React.Component {
           </div>
         </div>
       </div>
+      //</>
     );
   }
 }
