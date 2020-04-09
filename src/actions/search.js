@@ -5,34 +5,17 @@ import YOUTUBE_API_KEY from '../config/youtube.js';
 
 
 var handleVideoSearch = (query) => {
-  return (dispatch) => {
-    var options = {
-       key: YOUTUBE_API_KEY,
-       query: query
-    };
-//debugger;
-//console.log(props)
-    this.props.searchYouTube(options, (videos) =>
-      dispatch(changedVideoList(videos)),
-      dispatch(changedVideo(videos[0]))
-    )
-  }
-// setTimeout(() => {searchYouTube(options, (videos) =>
-//     dispatch(changedVideoList(videos)),
-//     dispatch(changedVideo(videos[0]))
-//   )}, 500);
+  let options = {
+    key: YOUTUBE_API_KEY,
+    query: query
+  };
 
-    // searchYouTube(options, (videos) => searchYouTube({
-    //   dispatch(changeVideoList(videos)),
-    //   dispatch(changeVideo(videos[0]));
-    // }))
-
-  // setTimeout(() => {this.props.searchYouTube(options, (videos) =>
-  //   this.setState({
-  //     videos: videos,
-  //     currentVideo: videos[0]
-  //   })
-  // )}, 500);
+  return dispatch => {
+    searchYouTube(options, (videos) => {
+      dispatch(changeVideo(videos[0]));
+      dispatch(changeVideoList(videos));
+    });
+  };
 };
 
 export default handleVideoSearch;
