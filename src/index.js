@@ -10,6 +10,7 @@ import store from './store/store.js'
 
 //TODO: Use the Provider component to make your store available to
 //  the rest of your app.
+//const store = configureStore();
 
 ReactDOM.render(
   <Provider store = {store}>
