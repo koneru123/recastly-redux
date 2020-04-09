@@ -10,30 +10,11 @@ var handleVideoSearch = (query) => {
        key: YOUTUBE_API_KEY,
        query: query
     };
-//debugger;
-//console.log(props)
     searchYouTube(options, (videos) => {
       dispatch(changeVideoList(videos));
       dispatch(changeVideo(videos[0]))
-    }
-    )
+    })
   }
-// setTimeout(() => {searchYouTube(options, (videos) =>
-//     dispatch(changedVideoList(videos)),
-//     dispatch(changedVideo(videos[0]))
-//   )}, 500);
-
-    // searchYouTube(options, (videos) => searchYouTube({
-    //   dispatch(changeVideoList(videos)),
-    //   dispatch(changeVideo(videos[0]));
-    // }))
-
-  // setTimeout(() => {this.props.searchYouTube(options, (videos) =>
-  //   this.setState({
-  //     videos: videos,
-  //     currentVideo: videos[0]
-  //   })
-  // )}, 500);
 };
 
 export default handleVideoSearch;
